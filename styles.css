@@ -1,0 +1,92 @@
+body {
+  font-family: 'IBM Plex Sans', sans-serif;
+  margin: auto;
+}
+
+header {
+  padding: 0% 2% 0% 2%;
+}
+
+footer {
+  background-color: lavender;
+  text-align: center;
+  padding: 2%;
+  margin-top: 5%;
+}
+
+#weather-section {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  border-radius: 7px;
+  background-color: lavender;
+  padding: 3%;
+  width: 40%;
+  margin: 2% 0% 2% 0%;
+}
+
+.icon {
+  height: 7vw;
+  width: auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.weather {
+  display: flex;
+  align-items: center;
+  margin: 20px 0px 5px 0px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.weather h1 {
+  margin: 10px 20px 0px 20px;
+  font-size: 200%;
+}
+
+p, h2 {
+  margin: 0;
+}
+
+#search-box {
+  height: 20px;
+  width: 300px;
+}
+
+.weather-section section {
+  width: 50%;
+}
+
+.delete {
+  height: 15px;
+  width: 15px;
+}
+
+.delete:hover {
+  cursor: pointer;
+}
+
+.card h3 {
+  margin: 5px 0px 20px 0px;
+}
+
+.day {
+  background-color: rgb(206, 241, 226);
+}
+
+.night {
+  background-color: rgb(190, 220, 255);
+}
