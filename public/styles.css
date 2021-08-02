@@ -7,6 +7,11 @@ header {
   padding: 0% 2% 0% 2%;
 }
 
+main {
+  width: 90%;
+  margin: auto;
+}
+
 footer {
   background-color: lavender;
   text-align: center;
@@ -16,23 +21,21 @@ footer {
 
 #weather-section {
   display: flex;
-  width: 90%;
-  margin: auto;
   flex-wrap: wrap;
-  justify-content: space-between;
 }
 
-.card {
+.card, #error {
   border-radius: 7px;
-  background-color: lavender;
-  padding: 3%;
-  width: 40%;
+  padding: 20px;
+  box-sizing: border-box;
   margin: 2% 0% 2% 0%;
+  width: 100%;
 }
 
 .icon {
-  height: 7vw;
+  height: 55px;
   width: auto;
+  margin: 10px;
 }
 
 header {
@@ -57,17 +60,13 @@ header {
   font-size: 200%;
 }
 
-p, h2 {
+p, .card-header h2 {
   margin: 0;
 }
 
 #search-box {
   height: 20px;
   width: 300px;
-}
-
-.weather-section section {
-  width: 50%;
 }
 
 .delete {
@@ -79,7 +78,7 @@ p, h2 {
   cursor: pointer;
 }
 
-.card h3 {
+.current-weather h2 {
   margin: 5px 0px 20px 0px;
 }
 
@@ -89,4 +88,39 @@ p, h2 {
 
 .night {
   background-color: rgb(190, 220, 255);
+}
+
+.forecast {
+  margin: 5px;
+  text-align: center;
+  padding: 5px;
+  width: 130px;
+}
+
+.forecast p {
+  white-space: nowrap;
+}
+
+.forecasts {
+  overflow: auto;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+}
+
+.card h3 {
+  margin: 10px 0px 5px 0px;
+}
+
+#error {
+  background-color: rgb(255, 174, 174);
+  text-align: center;
+}
+
+.selected {
+  background-color: rgba(138, 138, 138, 0.356);
+}
+
+table, th, td {
+  border: 1px solid black;
 }
