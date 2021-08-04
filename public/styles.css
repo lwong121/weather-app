@@ -1,10 +1,16 @@
+/*
+  Name: Lauren Wong
+  Date: July, 2020
+  Description: This is the styles.css file for the Weatherly website which is a weather website
+  created using the OpenWeatherMap API and icons made by Those Icons on Flaticon. This page adds
+  the style for the website which follows a minimalist and calm theme with white and black as the
+  main colors and pastel colors as accents.
+ */
+
 body {
   font-family: 'IBM Plex Sans', sans-serif;
   margin: auto;
-}
-
-header {
-  padding: 0% 2% 0% 2%;
+  width: 100%;
 }
 
 main {
@@ -12,16 +18,19 @@ main {
   margin: auto;
 }
 
+header {
+  padding: 0% 2% 0% 2%;
+}
+
+header h1 {
+  font-size: xx-large;
+}
+
 footer {
   background-color: lavender;
   text-align: center;
   padding: 2%;
   margin-top: 5%;
-}
-
-#weather-section {
-  display: flex;
-  flex-wrap: wrap;
 }
 
 .card, #error {
@@ -32,26 +41,47 @@ footer {
   width: 100%;
 }
 
+@media (min-width: 1000px) and (orientation: landscape) {
+  .card {
+    width: 49%;
+  }
+}
+
+@media (orientation: portrait) {
+  .card {
+    width: 100%;
+  }
+}
+
 .icon {
   height: 55px;
   width: auto;
   margin: 10px;
 }
 
-header {
+#weather-section, header, .weather, .card-header, #logo {
   display: flex;
-  justify-content: space-between;
+}
+
+#logo img {
+  height: 40px;
+  width: auto;
+  margin-right: 10px;
+}
+
+#weather-section {
+  flex-wrap: wrap;
+}
+
+header, .weather, #logo {
   align-items: center;
 }
 
 .weather {
-  display: flex;
-  align-items: center;
   margin: 20px 0px 5px 0px;
 }
 
-.card-header {
-  display: flex;
+.card-header, header, #weather-section {
   justify-content: space-between;
 }
 
@@ -65,17 +95,26 @@ p, .card-header h2 {
 }
 
 #search-box {
-  height: 20px;
-  width: 300px;
+  height: 2.2em;
+  width: 25em;
+  border-radius: 5px;
+  border: 1px solid grey;
+  text-indent: 5px;
 }
 
-.delete {
-  height: 15px;
-  width: 15px;
+.btn {
+  height: 1.2em;
+  width: 1.2em;
 }
 
-.delete:hover {
+.btn:hover, .forecast:hover {
   cursor: pointer;
+  filter: opacity(50%);
+}
+
+form .btn {
+  margin-left: 10px;
+  margin-top: 10px;
 }
 
 .current-weather h2 {
@@ -95,6 +134,10 @@ p, .card-header h2 {
   text-align: center;
   padding: 5px;
   width: 130px;
+}
+
+.forecast:hover {
+  border: 2px solid rgb(180, 180, 180);
 }
 
 .forecast p {
@@ -121,6 +164,11 @@ p, .card-header h2 {
   background-color: rgba(138, 138, 138, 0.356);
 }
 
-table, th, td {
-  border: 1px solid black;
+th, td {
+  padding: 5px;
+  border: 1px solid grey;
+}
+
+table {
+  width: 100%;
 }
