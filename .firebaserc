@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "weather-b3071"
-  }
+    "default": "weatherly-90769"
+  },
+  "targets": {}
 }

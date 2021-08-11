@@ -1,10 +1,11 @@
 /**
  * Name: Lauren Wong
  * Date: July, 2020
- * Description: This is the index.js file for the Weatherly website which is a weather website
- * created using the OpenWeatherMap API and icons from Those Icons on Flaticon. On Weatherly, users
- * can search for a city through the city name or zip code to add that location as a card to the
- * main page, check the current forecast, and check the 8-day forecast.
+ * Description: This is the index.js file for the Weatherly website which is a
+ * weather website created using the OpenWeatherMap API and icons from Those
+ * Icons on Flaticon. On Weatherly, users can search for a city through the city
+ * name or zip code to add that location to the main page, and check the current
+ * 7-day forecast.
  */
 
 "use strict";
@@ -13,15 +14,16 @@
 
   const BASE_URL = "https://api.openweathermap.org/data/2.5/";
   const GEOLOCATION_URL = "https://api.openweathermap.org/geo/1.0/";
-  const API_KEY = "a21405be3a30fb95c947ca8f14557c76";
+  const API_KEY = "5cfa7d88b68a8c44ab857b0260dc2256";
 
   window.addEventListener("load", init);
 
   /**
-   * Sets up the page by adding the information cards for the user's current location as well as
-   * any of the other cities they have searched for previously. Also adds an event listener the
-   * search box and search button to get weather data on the location or zip code that the user
-   * typed into the search box.
+   * Sets up the page by adding the information cards for the user's current
+   * location as well as any of the other cities they have searched for
+   * previously. Also adds an event listener the search box and search button to
+   * get weather data on the location or zip code that the user typed into the
+   * search box.
    */
   function init() {
     getCurrentLocation();
@@ -34,7 +36,8 @@
   }
 
   /**
-   * Gets all location information on the city or zip code the user has typed into the search box.
+   * Gets all location information on the city or zip code the user has typed
+   * into the search box.
    */
   function getLocation() {
     let location = id("search-box").value;
@@ -58,7 +61,8 @@
   }
 
   /**
-   * Gets the latitude and longitude coordinates from the given location response.
+   * Gets the latitude and longitude coordinates from the given location
+   * response.
    * @param {string} location - json containing the geographic location information for a city
    */
   function getCoordinates(location) {
@@ -99,8 +103,9 @@
   }
 
   /**
-   * Adds all weather information to an information card. This information includes location, time
-   * updated, current weather, and the weather forecast for the next 8 days.
+   * Adds all weather information to an information card. This information
+   * includes location, time updated, current weather, and the weather forecast
+   * for the next 8 days.
    * @param {string} res - json containing the weather information for a city
    * @param {boolean} isCurrentLocation - whether the response represents the user's current location
    */
@@ -120,9 +125,9 @@
     }
 
   /**
-   * Adds the key information and functions to the header of the card. This information includes
-   * the name of the city and country, the delete button, and the time the information was last
-   * updated.
+   * Adds the key information and functions to the header of the card. This
+   * information includes the name of the city and country, the delete button,
+   * and the time the information was last updated.
    * @param {DOMObject} card - section element representing a single weather card for a city
    * @param {string} res - json containing weather data on a city
    */
@@ -145,9 +150,10 @@
   }
 
   /**
-   * Adds the current weather information to the card. This information includes an icon representing
-   * the current weather conditions, the current temperature, the minimum and maximum temperatures
-   * for the day, and a short description of the weather.
+   * Adds the current weather information to the card. This information includes
+   * an icon representing the current weather conditions, the current
+   * temperature, the minimum and maximum temperatures for the day, and a short
+   * description of the weather.
    * @param {DOMObject} card - section element representing a single weather card for a city
    * @param {string} res - json containing weather data on a city
    */
@@ -175,9 +181,9 @@
   }
 
   /**
-   * Adds the extra details for today's weather to the card. These details include the humidity
-   * levels the temperature it actually feels like, the current wind speed, the visibility, and the
-   * atmospheric pressure.
+   * Adds the extra details for today's weather to the card. These details
+   * include the humidity levels the temperature it actually feels like, the
+   * current wind speed, the visibility, and the atmospheric pressure.
    * @param {DOMObject} card - section element representing a single weather card for a city
    * @param {string} res - json containing weather data on a city
    */
@@ -197,8 +203,9 @@
   }
 
   /**
-   * Gets the daily forecast weather data for the upcoming 7 days and the current day. It uses the
-   * latitude and longitude from the response data to get the forecast.
+   * Gets the daily forecast weather data for the upcoming 7 days and the
+   * current day. It uses the latitude and longitude from the response data to
+   * get the forecast.
    * @param {DOMObject} card - section element representing a single weather card for a city
    * @param {string} res - json containing weather and location data on a city
    */
@@ -215,7 +222,8 @@
   }
 
   /**
-   * Adds a basic 7-day weather forecast information section and the header to the card.
+   * Adds a basic 7-day weather forecast information section and the header to
+   * the card.
    * @param {string} res - json containing the 7-day weather forecast data
    * @param {DOMObject} card - section element representing a single weather card for a city
    */
@@ -238,9 +246,9 @@
   }
 
   /**
-   * Adds the weather forecast for each of the 7 upcoming days. This information includes the date,
-   * an icon representing the weather conditions, minimum and maximum temperatures, and a short
-   * description of the weather conditions.
+   * Adds the weather forecast for each of the 7 upcoming days. This information
+   * includes the date, an icon representing the weather conditions, minimum and
+   * maximum temperatures, and a short description of the weather conditions.
    * @param {string} res - json containing the weather forecast for one day
    * @param {DOMObject} forecasts - section element containing the cards for the 7 day forecast
    * @param {number} offset - UTC timezone offset in seconds
@@ -270,7 +278,8 @@
   }
 
   /**
-   * Displays the weather forecast and temperatures for a single day and selects the day on the page.
+   * Displays the weather forecast and temperatures for a single day and selects
+   * the day on the page.
    * @param {string} res - json containing the weather forecast for one day
    * @param {DOMObject} forecasts - section element containing the cards for the 7 day forecast
    * @param {DOMObject} day - section element representing one card in the forecasts section
@@ -287,8 +296,9 @@
   }
 
   /**
-   * Adds the day details section to the bottom of the weather card. The information in this section
-   * includes the humidity, wind speed, UV index, and atmospheric pressure.
+   * Adds the day details section to the bottom of the weather card. The
+   * information in this section includes the humidity, wind speed, UV index,
+   * and atmospheric pressure.
    * @param {DOMObject} dayWeather - section element containing the day details for forecast day
    * @param {string} res - json containing the weather forecast for one day
    */
@@ -321,8 +331,8 @@
   }
 
   /**
-   * Adds the table of the actual temperatures and real feel temperatures for the morning, afternoon,
-   * evening, and night to the bottom of the card.
+   * Adds the table of the actual temperatures and real feel temperatures for
+   * the morning, afternoon, evening, and night to the bottom of the card.
    * @param {DOMObject} dayWeather - section element containing the day details for forecast day
    * @param {string} res - json containing the weather forecast for one day
    */
@@ -361,8 +371,8 @@
   }
 
   /**
-   * Changes the color of a weather card for a city depending on whether it is day or night in city
-   * it represents.
+   * Changes the color of a weather card for a city depending on whether it is
+   * day or night in city it represents.
    * @param {DOMObject} card - section element representing a city's weather card
    * @param {string} res - json containing the weather information for a city
    */
@@ -377,9 +387,10 @@
   }
 
   /**
-   * If geolocation is supported, it get's the user's current location and uses the data to add the
-   * weather card for their city to the top of the page. If geolocation is not supported, it clears
-   * the page and adds a message saying that the user's browser does not support geolocation.
+   * If geolocation is supported, it get's the user's current location and uses
+   * the data to add the weather card for their city to the top of the page. If
+   * geolocation is not supported, it clears the page and adds a message saying
+   * that the user's browser does not support geolocation.
    */
   function getCurrentLocation() {
     if (navigator.geolocation) {
@@ -393,8 +404,8 @@
   }
 
   /**
-   * If the user has visited the site previously and has added other weather cards to the page, it
-   * will add those cards to the page when it loads.
+   * If the user has visited the site previously and has added other weather
+   * cards to the page, it will add those cards to the page when it loads.
    */
   function addOldCards() {
     for (let i = 0; i < window.localStorage.length; i++) {
@@ -405,8 +416,9 @@
   }
 
   /**
-   * Deletes the selected card and removes it from memory so that if the user revisits the page, it
-   * will not show up and they will have to add it back manually.
+   * Deletes the selected card and removes it from memory so that if the user
+   * revisits the page, it will not show up and they will have to add it back
+   * manually.
    */
   function deleteCard() {
     this.parentElement.parentElement.remove();
@@ -416,9 +428,9 @@
   }
 
   /**
-   * Checks whether a fetch's response was successful and valid. If successful, it
-   * returns the response. Otherwise, it returns the rejected promise with an error
-   * and the response in text format.
+   * Checks whether a fetch's response was successful and valid. If successful,
+   * it returns the response. Otherwise, it returns the rejected promise with an
+   * error and the response in text format.
    * @param {object} res - response to check if valid or not
    * @return {object} - valid response if successful, otherwise a rejected Promise
    */
@@ -430,8 +442,9 @@
   }
 
   /**
-   * Handles an error by clearing the page apart from the header and the footer, displaying an
-   * error message, disabling the search-box, and removing the event listener from the search button.
+   * Handles an error by clearing the page apart from the header and the footer,
+   * displaying an error message, disabling the search-box, and removing the
+   * event listener from the search button.
    */
   function handleError() {
     id("search-box").disabled = true;
